@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Gloria+Hallelujah&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    --moz-box-sizing: border-box;
+    --webkit-box-sizing: border-box;
+    --ms-box-sizing: border-box;
+    --o-box-sizing: border-box;
+    font-family: 'Chewy', cursive;
+}
+
+:root{
+  --primary-color: #FF6F61;
+  --secondary-color: #FFD166;
+  --accent-color-1: #06D6A0;
+  --accent-color-2: #118AB2;
+  --text-color: #333333;
+  --background-color: #F7F9FB;
+  --card-background-color: #FFFFFF;
+  --button-hover-color: #FF5C49;
+  --link-hover-color: #0E7DA5;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: -1;
+}
+
+#header{
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.navbar{
+    border: solid 2px var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.logo{
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    animation: wiggle 0.5s ease infinite;
+}
+
+.link-item a{
+    color: var(--primary-color);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.link-item a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.link-item a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.link-item a:hover {
+    animation: squiggle 0.5s ease infinite;
+}
+
+.signup-btn{
+    background: var(--primary-color);
+    color: #F7F9FB;
+    padding: 0.5rem 3rem;
+    border-radius: 2px;
+    box-shadow: 5px 5px 0 var(--accent-color-2);
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.signup-btn:hover {
+    background: var(--button-hover-color);
+    animation: bounce 0.5s ease infinite;
+}
+
+.link-list{
+    display: flex;
+    gap: 2rem;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    gap: 2rem;
+    flex: 1;
+    min-height: 0;
+}
+
+.hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-text .header {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-text .sub-header {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.cta-btn {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent-color-1);
+    color: var(--card-background-color);
+    font-size: 1.2rem;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-btn i {
+    font-size: 1rem;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--accent-color-2),
+        var(--accent-color-2) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+    border-radius: 32px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover::before {
+    opacity: 1;
+    animation: rotate 20s linear infinite;
+}
+
+.hero-illust {
+    flex: 1;
+    height: 300px;
+    background-color: #fff;
+    border: 3px solid var(--text-color);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 10px 10px 0 var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-illust::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 100%;
+    width: 2px;
+    background-color: var(--accent-color-1);
+    animation: squiggle 3s ease-in-out infinite;
+}
+
+.hero-illust::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(#0000 0px, #0000 24px, var(--text-color) 25px),
+        radial-gradient(circle at 15px 12.5px, var(--accent-color-2) 2px, transparent 2px);
+    background-size: 100% 25px, 30px 25px;
+    opacity: 0.1;
+}
+
+#doodly-text {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* Statistics Section */
+#statistics {
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+#statistics::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+.stat-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.stat-item i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-family: 'Gloria Hallelujah', cursive;
+}
